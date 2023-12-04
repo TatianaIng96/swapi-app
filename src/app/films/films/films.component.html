@@ -1,0 +1,52 @@
+<div class="star-wars">
+  <div class="display">
+    <img class="img" src="https://www.freeiconspng.com/uploads/logo-star-wars-png-4.png"/>
+  </div>
+  <h2 class="h1"> Films</h2>
+  <div class="content">
+    <div *ngFor="let film of listFilms">
+      <p-card [header]="film.title"  [style]="{ width: '300px' }">
+        <p>
+           Director: {{film.director}}
+        </p>
+        <p>
+           Producer: {{film.producer}}
+        </p>
+        <div>
+          <p-accordion [activeIndex]="1" *ngIf="film.characters?.length > 0">
+            <p-accordionTab header="Details">
+              <p-button label="Characters" (click)="showDialog(film, 'characters')" styleClass="p-button-link"></p-button>
+
+
+              <p-button label="Species" (click)="showDialog(film, 'species')" styleClass="p-button-link"></p-button>
+
+              <p-button label="Starships" (click)="showDialog(film, 'starships')" styleClass="p-button-link"></p-button>
+              <p-button label="Vehicles" (click)="showDialog(film, 'vehicles')" styleClass="p-button-link"></p-button>
+            </p-accordionTab>
+          </p-accordion>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+  <p-dialog header="Characters Header" [(visible)]="displayCharactersModal" [style]="{width: '50vw'}">
+    <!-- Contenido del modal para Characters -->
+    <p>characters</p>
+    <p-button label="View all characters" (onClick)="sendCharacters(selectedFilm.characters)"></p-button>
+  </p-dialog>
+
+  <p-dialog header="Species Header" [(visible)]="displaySpeciesModal" [style]="{width: '50vw'}">
+    <!-- Contenido del modal para Species -->
+    <p>species</p>
+    <p-button label="View all species" (onClick)="sendSpecies(selectedFilm.species)"></p-button>
+  </p-dialog>
+  <p-dialog header="Starships Header" [(visible)]="displayStarshipsModal" [style]="{width: '50vw'}">
+    <!-- Contenido del modal para Species -->
+    <p>starships</p>
+  </p-dialog>
+  <p-dialog header="Vehicles Header" [(visible)]="displayVehiclesModal" [style]="{width: '50vw'}">
+    <!-- Contenido del modal para Species -->
+    <p>vehicles</p>
+  </p-dialog>
+</div>
+

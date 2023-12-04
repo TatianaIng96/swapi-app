@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/primeng/resources/themes/lara-light-blue/theme.css";
+@import "../node_modules/primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+body{
+  background-image: url('https://wallpaperaccess.com/full/236754.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
