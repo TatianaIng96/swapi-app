@@ -1,12 +1,12 @@
 <div class="content">
   <div class="display">
-    <img class="img"  (click)="redirectFilms()" src="https://www.freeiconspng.com/uploads/logo-star-wars-png-4.png"/>
+    <img class="img" (click)="redirectFilms()" src="https://www.freeiconspng.com/uploads/logo-star-wars-png-4.png"/>
   </div>
-  <h2 class="h1"> Species</h2>
+  <h2 class="h1"> Vehicles</h2>
   <div>
     <p-table
       #dt2
-      [value]="listSpecies"
+      [value]="listVehicles"
       dataKey="id"
       [paginator]="true"
       [rows]="5"
@@ -14,53 +14,53 @@
       [tableStyle]="{ 'min-width': '50rem' }"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
       [rowsPerPageOptions]="[5, 10, 20]"
-      [globalFilterFields]="['name', 'classification', 'desigination', 'average_height', 'skin_colors', 'eye_colors', 'language']"
+      [globalFilterFields]="['name', 'model', 'manufacturer', 'cost_in_credits', 'length', 'crew', 'vehicle_class']"
       [tableStyle]="{ 'min-width': '75rem' }"
       styleClass="p-datatable-striped"
      >
       <ng-template pTemplate="header">
         <tr>
             <th>Name</th>
-            <th>Classification</th>
-            <th>Designation</th>
-            <th>AverageHeight</th>
-            <th>SkinColor</th>
-            <th>EyeColor</th>
-            <th>Language</th>
+            <th>Model</th>
+            <th>Manufacturer</th>
+            <th>Cost in Credits</th>
+            <th>Length</th>
+            <th>Crew</th>
+            <th>vehicles Class</th>
         </tr>
         <tr>
           <th>
             <p-columnFilter type="text" field="name"></p-columnFilter>
           </th>
           <th>
-            <p-columnFilter type="text" field="classification"></p-columnFilter>
+            <p-columnFilter type="text" field="model"></p-columnFilter>
           </th>
           <th>
-            <p-columnFilter type="text" field="designation"></p-columnFilter>
+            <p-columnFilter type="text" field="manufacturer"></p-columnFilter>
           </th>
           <th>
-            <p-columnFilter type="text" field="average_height"></p-columnFilter>
+            <p-columnFilter type="text" field="cost_in_credits"></p-columnFilter>
           </th>
           <th>
-            <p-columnFilter type="text" field="skin_colors"></p-columnFilter>
+            <p-columnFilter type="text" field="length"></p-columnFilter>
           </th>
           <th>
-            <p-columnFilter type="text" field="eye_colors"></p-columnFilter>
+            <p-columnFilter type="text" field="crew"></p-columnFilter>
           </th>
           <th>
-            <p-columnFilter type="text" field="language"></p-columnFilter>
+            <p-columnFilter type="text" field="vehicle_class"></p-columnFilter>
           </th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-species>
+      <ng-template pTemplate="body" let-vehicles>
           <tr>
-              <td>{{ species.name }}</td>
-              <td>{{ species.classification }}</td>
-              <td>{{ species.designation }}</td>
-              <td>{{ species.average_height}}</td>
-              <td>{{ species.skin_colors }}</td>
-              <td>{{ species.eye_colors }}</td>
-              <td>{{ species.language}}</td>
+              <td>{{ vehicles.name }}</td>
+              <td>{{ vehicles.model }}</td>
+              <td>{{ vehicles.manufacturer }}</td>
+              <td>{{ vehicles.cost_in_credits}}</td>
+              <td>{{ vehicles.length }}</td>
+              <td>{{ vehicles.crew }}</td>
+              <td>{{ vehicles.vehicle_class}}</td>
           </tr>
       </ng-template>
       <ng-template pTemplate="paginatorleft">
@@ -77,4 +77,6 @@
   </p-table>
   </div>
 </div>
+
+
 
