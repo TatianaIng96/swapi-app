@@ -5,7 +5,7 @@
 export const environment = {
   production: true,
   swapi: 'https://swapi.dev/api/',
-  films: 'films'
+  films: 'films',
 };
 
 /*
